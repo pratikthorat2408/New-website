@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>launching website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="container">
+        <img src="images/logo.1.png"class="logo"> 
+        <div class="content"><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+            
+             <p>Website is Under Construction</p>
+             <h1>We're <span>Launching our Project <span>soon</h1>
+             <div class="launch-time">
+                <div>
+                   <p id="days">00</p>
+                   <span>Days</span>
+                </div>
+                <div>
+                   <p id="hours">00</p>
+                   <span>Hours</span>
+                </div>
+                <div>
+                   <p id="mins">00</p>
+                   <span>Minutes</span>
+                </div>
+                <div>
+                   <p id="secs">00</p>
+                   <span>seconds</span>
+                </div>
+                </div>
+                <button type="button">Learn More <img src="images/triangle.png"></button>
+                 <h3 style="color: yellow; " id="r">Pratik Thorat Creativity</h3>
+                 <h4 id="ui">Special thanks to Joyson sir</h4>
+        </div>
+        <img src="images/rocket.png" class="rocket">
+       
+    </div>
+    
+       
+
+    <script>
+         var countdowndate= new Date("Jan 01, 2022").getTime();
+         var x= setInterval(function(){
+              var now= new Date().getTime();
+              var distance=countdowndate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance %  (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML= days;
+            document.getElementById("hours").innerHTML= hours;
+            document.getElementById("mins").innerHTML=  minutes;
+            document.getElementById("secs").innerHTML= seconds;
+
+            if(distance<0){
+              clearInterval(x);
+            document.getElementById("days").innerHTML= "00";
+            document.getElementById("hours").innerHTML= "00";
+            document.getElementById("mins").innerHTML= "00";
+            document.getElementById("secs").innerHTML= "00";
+            }
+
+         },1000);
+    </script>
+</body>
+</html>
